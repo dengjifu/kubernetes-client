@@ -41,19 +41,19 @@ public class ListExamples {
       );
 
       System.out.println(
-        client.namespaces().withLabel("this", "works").list()
+        client.namespaces().withLabel("tpye", "aaa").list()+"bbbb"
       );
 
       System.out.println(
-        client.pods().withLabel("this", "works").list()
+        client.pods().withLabel("name", "frontend").list()+"ccccc"
       );
 
       System.out.println(
-        client.pods().inNamespace("test").withLabel("this", "works").list()
+        client.pods().inNamespace("development").withLabel("name", "frontend").list()+"dddd"
       );
 
       System.out.println(
-        client.pods().inNamespace("test").withName("testing").get()
+        client.pods().inNamespace("development").withName("frontend-moia9").get()+"ffff"
       );
     } catch (KubernetesClientException e) {
       logger.error(e.getMessage(), e);

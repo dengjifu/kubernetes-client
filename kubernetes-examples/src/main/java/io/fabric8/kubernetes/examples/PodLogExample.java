@@ -28,12 +28,12 @@ public class PodLogExample {
   private static final Logger logger = LoggerFactory.getLogger(PodLogExample.class);
 
   public static void main(String[] args) {
-    if (args.length < 1) {
-      System.out.println("Usage: podName [master] [namespace]");
-      return;
-    }
-    String podName = args[0];
-    String namespace = "default";
+//    if (args.length < 1) {
+//      System.out.println("Usage: podName [master] [namespace]");
+//      return;
+//    }
+    String podName = "frontend-mysql-mjolj";
+    String namespace = "development";
     String master = "http://172.16.18.133:8080/";
 
     if (args.length > 1) {

@@ -36,7 +36,7 @@ public class WatchExample {
     final CountDownLatch closeLatch = new CountDownLatch(1);
     Config config = new ConfigBuilder().withMasterUrl(master).withWatchReconnectLimit(2).build();
     try (final KubernetesClient client = new DefaultKubernetesClient(config)) {
-      try (Watch watch = client.replicationControllers().inNamespace("default").withName("test").watch(new Watcher<ReplicationController>() {
+      try (Watch watch = client.replicationControllers().inNamespace("development").withName("frontend-affn3").watch(new Watcher<ReplicationController>() {
         @Override
         public void eventReceived(Action action, ReplicationController resource) {
           logger.info("{}: {}", action, resource.getMetadata().getResourceVersion());
@@ -54,7 +54,7 @@ public class WatchExample {
       } catch (KubernetesClientException | InterruptedException e) {
         logger.error("Could not watch resources", e);
       }
-      try (Watch watch = client.replicationControllers().inNamespace("default").watch(new Watcher<ReplicationController>() {
+      try (Watch watch = client.replicationControllers().inNamespace("development").watch(new Watcher<ReplicationController>() {
         @Override
         public void eventReceived(Action action, ReplicationController resource) {
           logger.info("{}: {}", action, resource.getMetadata().getResourceVersion());
