@@ -19,7 +19,6 @@ import io.fabric8.kubernetes.client.Config;
 import io.fabric8.kubernetes.client.ConfigBuilder;
 import io.fabric8.kubernetes.client.DefaultKubernetesClient;
 import io.fabric8.kubernetes.client.KubernetesClient;
-import io.fabric8.kubernetes.client.KubernetesClientException;
 import io.fabric8.kubernetes.client.dsl.LogWatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,7 +34,7 @@ public class PodLogExample {
     }
     String podName = args[0];
     String namespace = "default";
-    String master = "https://localhost:8443/";
+    String master = "http://172.16.18.133:8080/";
 
     if (args.length > 1) {
       master = args[1];

@@ -28,7 +28,7 @@ public class ListExamples {
   private static final Logger logger = LoggerFactory.getLogger(ListExamples.class);
 
   public static void main(String[] args) {
-    String master = "https://localhost:8443/";
+    String master = "http://172.16.18.133:8080/";
     if (args.length == 1) {
       master = args[0];
     }

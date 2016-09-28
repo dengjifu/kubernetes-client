@@ -16,28 +16,19 @@
 package io.fabric8.kubernetes.examples;
 
 import io.fabric8.kubernetes.api.model.ReplicationController;
-import io.fabric8.kubernetes.api.model.Status;
-import io.fabric8.kubernetes.client.Config;
-import io.fabric8.kubernetes.client.ConfigBuilder;
-import io.fabric8.kubernetes.client.DefaultKubernetesClient;
-import io.fabric8.kubernetes.client.KubernetesClient;
-import io.fabric8.kubernetes.client.KubernetesClientException;
-import io.fabric8.kubernetes.client.Watch;
-import io.fabric8.kubernetes.client.Watcher;
+import io.fabric8.kubernetes.client.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-import static io.fabric8.kubernetes.client.Watcher.Action.ERROR;
-
 public class WatchExample {
 
   private static final Logger logger = LoggerFactory.getLogger(WatchExample.class);
 
   public static void main(String[] args) throws InterruptedException {
-    String master = "http://localhost:8080/";
+    String master = "http://172.16.18.133:8080/";
     if (args.length == 1) {
       master = args[0];
     }

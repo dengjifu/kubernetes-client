@@ -28,7 +28,7 @@ import java.io.IOException;
 public class ExecExample {
 
     public static void main(String[] args) throws InterruptedException {
-        String master = "https://localhost:8443/";
+      String master = "http://172.16.18.133:8080/";
         String podName = null;
 
         if (args.length == 2) {
